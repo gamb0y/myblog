@@ -1,0 +1,31 @@
+<%- include('partials/header'); -%>
+
+<h1>Count the number of characters</h1>
+
+<form class="" action="/count" method="">
+  <div class="form-group">
+    <label for="formTextarea1">Text input</label>
+    <textarea class="form-control" id="formTextarea1" rows="5"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="formTextInput1">Number of characters</label>
+    <input type="text" class="form-control" id="formTextInput1" readonly>
+  </div>
+
+  <button type="button" class="btn btn-primary" onclick="calculate()" >Count</button>
+  <button type="button" class="btn btn-secondary" onclick="clearAll()">Clear</button>
+</form>
+
+<script>
+  function calculate() {
+    document.getElementById("formTextInput1").value = document.getElementById("formTextarea1").value.length;
+  }
+
+  function clearAll() {
+    document.getElementById("formTextInput1").value = "";
+    document.getElementById("formTextarea1").value = "";
+  }
+</script>
+
+<%- include('partials/footer'); -%>
